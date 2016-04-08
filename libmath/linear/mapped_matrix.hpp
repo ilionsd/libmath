@@ -3,6 +3,10 @@
 
 #include <cstddef>
 #include <unordered_map>
+#include <algorithm>
+
+#include "../meta/meta_function.hpp"
+#include "../meta/generate_array.hpp"
 
 #include "matrix.hpp"
 
@@ -83,10 +87,12 @@ namespace libmath {
 				
 
 			private:
-				
+				using sum_cache = meta::generate_array<std::max(low_number(), high_number()), meta::sum>::type;
+
 				place begin_index(const index_type row) const {
 					if (row < low_number()) {
 						//-- reduced rows, special mapping --
+
 					}
 					else if (row - low_number() + diagonal_number() < cols_number()) {
 						//-- diagonal_number elements in row --
