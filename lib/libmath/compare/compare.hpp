@@ -24,11 +24,41 @@ namespace libmath {
 		};
 
 		template<unsigned M, int E>
+		struct equal_to :
+				public epsilon_compare<M, E>
+		{
+			using epsilon_compare<M, E>::epsilon;
+			inline constexpr bool operator() (double a, double b) const {
+				return fabs(a - b) < epsilon;
+			};
+		};
+
+		template<unsigned M, int E>
+		struct not_equal_to :
+				public epsilon_compare<M, E>
+		{
+			using epsilon_compare<M, E>::epsilon;
+			inline constexpr bool operator() (double a, double b) const {
+				return fabs(a - b) >= epsilon;
+			};
+		};
+
+		template<unsigned M, int E>
+		struct less :
+				public epsilon_compare<M, E>
+		{
+			using epsilon_compare<M, E>::epsilon;
+			inline constexpr bool operator() (double a, double b) const {
+				return (a - b) <= -epsilon;
+			};
+		};
+
+		template<unsigned M, int E>
 		struct less_equal :
 				public epsilon_compare<M, E>
 		{
 			using epsilon_compare<M, E>::epsilon;
-			constexpr bool operator() (double a, double b) const {
+			inline constexpr bool operator() (double a, double b) const {
 				return (a - b) < epsilon;
 			};
 		};
@@ -38,8 +68,8 @@ namespace libmath {
 				public epsilon_compare<M, E>
 		{
 			using epsilon_compare<M, E>::epsilon;
-			constexpr bool operator() (double a, double b) const {
-				return (a - b) > -epsilon;
+			inline constexpr bool operator() (double a, double b) const {
+				return (b - a) < epsilon;
 			}
 		};
 
