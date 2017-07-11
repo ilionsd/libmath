@@ -1,6 +1,8 @@
+docs/
+Debug/
+
 .metadata
 bin/
-Debug/
 tmp/
 *.tmp
 *.bak
