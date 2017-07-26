@@ -31,8 +31,7 @@ namespace test {
 			using std::endl;
 			cout << "libmath::compare test... ";
 			namespace ecmp = ::libmath::compare;
-			ecmp::less_equal<1, -9> ele;
-			assert(ele(1.0 / 3.0, 0.333333333) == true);
+
 			cout << "ok" << endl;
 		};
 
