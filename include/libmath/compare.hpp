@@ -8,7 +8,7 @@
 #ifndef LIBMATH_COMPARE_HPP_
 #define LIBMATH_COMPARE_HPP_
 
-#include "../../lib/libmath/compare/epsilon.hpp"
-#include "../../lib/libmath/compare/ulp.hpp"
+#include "../../lib/libmath/fpcompare/epsilon.hpp"
+#include "../../lib/libmath/fpcompare/ulp.hpp"
 
 #endif /* LIBMATH_COMPARE_HPP_ */

@@ -5,8 +5,8 @@
  *      Author: ilion
  */
 
-#ifndef LIB_LIBMATH_COMPARE_ULP_HPP_
-#define LIB_LIBMATH_COMPARE_ULP_HPP_
+#ifndef LIB_LIBMATH_FPCOMPARE_ULP_HPP_
+#define LIB_LIBMATH_FPCOMPARE_ULP_HPP_
 
 #include <cstdint>
 #include <cmath>
@@ -52,4 +52,4 @@ namespace libmath {
 
 
 
-#endif /* LIB_LIBMATH_COMPARE_ULP_HPP_ */
+#endif /* LIB_LIBMATH_FPCOMPARE_ULP_HPP_ */
